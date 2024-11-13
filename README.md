@@ -3,6 +3,9 @@
 Luqmanul Hakim (2306152191)<br>
 PBP D
 
+- [Tugas7](#Tugas-7)
+- [Tugas8](#Tugas-8)
+
 # Tugas 7
 
 ### Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget, dan jelaskan perbedaan dari keduanya.
@@ -150,7 +153,10 @@ child: InkWell(
 ###  Jelaskan dan bandingkan penggunaan Column dan Row pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!
 - Column menyusun widget secara vertikal dari atas ke bawah.
 - Row menyusun widget secara horizontal dari kiri ke kanan.
-Contoh Implementasi `Column`
+
+<br> 
+Contoh Implementasi `Column` <br>
+
 ``` dart
 Column(
   children: [
@@ -200,3 +206,8 @@ Navigasi ditangani dengan menggunakan Navigator.
   );
   ```
 - Untuk kembali ke halaman sebelumnya menggunakan `Navigator.pop`
+``` dart
+onPressed: () {
+    Navigator.pop(context);
+},
+```
