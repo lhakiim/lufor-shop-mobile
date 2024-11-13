@@ -138,3 +138,65 @@ child: InkWell(
     ),
 ),
 ```
+<br><br>
+# Tugas 8
+
+### Apa kegunaan const di Flutter? Jelaskan apa keuntungan ketika menggunakan const pada kode Flutter. Kapan sebaiknya kita menggunakan const, dan kapan sebaiknya tidak digunakan?
+`const` pada Flutter digunakan untuk mendefinisikan objek yang nilainya tidak berubah selama dilakukan runtime. Keuntunggannya adalah
+- Meningkatkan efisiensi memory dikarenakan objek `const` hanya dideklarasikan sekali sehingga menghindari alokasi memori berulang untuk objek yang sama,
+- Meningkatkan performa dikarenakan objek tidak perlu dilakukan rebuild setiap ada perubahan sehingga mengurangi kerja sistem.
+`const` sebaiknya digunakan ketika widget bersifat statis dan tidak memiliki perubahan dan tidak perlu digunakan ketika datanya bersifat dinamis yang berubah ketika aplikasi berjalan.
+
+###  Jelaskan dan bandingkan penggunaan Column dan Row pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!
+- Column menyusun widget secara vertikal dari atas ke bawah.
+- Row menyusun widget secara horizontal dari kiri ke kanan.
+Contoh Implementasi `Column`
+``` dart
+Column(
+  children: [
+    Text('Column 1'),
+    Text('Column 2'),
+  ],
+);
+
+```
+Contoh Implementasi `Row`
+``` dart
+Column(
+  children: [
+    Text('Row 1'),
+    Text('Row 2'),
+  ],
+);
+
+```
+
+### Sebutkan apa saja elemen input yang kamu gunakan pada halaman form yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!
+Pada tugas ini saya menggunakan elemen `TextFormField` pada field nama, harga dan deskripsi product.
+Elemen Flutter yang tidak digunakan:
+ - `Slider` : Elemen input untuk memilih nilai numerik dalam suatu range.
+ - `RadioListTile` : Elemen input untuk memilih salah satu radio button dari beberapa value.
+ - `CheckboxListTile` : Elemen input untuk memilih beberapa value.
+ - `DatePicker/TimePicker` : Elemen input untuk memilih tanggal/waktu.
+ - `DropDownButtonFormField` : Elemen input untuk memilih salah satu button yang disusun dalam bentuk dropdown
+
+### Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?
+Tema di atur dengan mengimplementasikan `ThemeData` pada MaterialApp. Tema ini bersifat global sehingga ia mengatur warna, teks dan lainnya diseluruh aplikasi.
+``` Dart
+colorScheme: ColorScheme.fromSwatch(
+  primarySwatch: Colors.blueGrey,
+).copyWith(secondary: Colors.tealAccent[200]), 
+```
+Pengaplikasian tema dapat dilakukan dengan `color: Theme.of(context).colorScheme.primary,` atau `color: Theme.of(context).colorScheme.secondary,`
+
+### Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?
+Navigasi ditangani dengan menggunakan Navigator. 
+- Untuk berpindah kehalaman lain menggunakan `Navigator.push`
+  ``` dart
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const ProductEntryFormPage(),
+    ),
+  );
+  ```
+- Untuk kembali ke halaman sebelumnya menggunakan `Navigator.pop`
