@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lufor_shop_mobile/screens/menu.dart';
 import 'package:lufor_shop_mobile/screens/shopentry_form.dart';
+import 'package:lufor_shop_mobile/screens/list_shopentry.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -58,8 +59,19 @@ class LeftDrawer extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ProductEntryFormPage(),
+                  builder: (context) => const ProductEntryFormPage(),
                 ));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.search_rounded),
+            title: const Text('Daftar Product'),
+            onTap: () {
+                // Route menu ke halaman mood
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ShopEntryPage()),
+              );
             },
           ),
         ],
